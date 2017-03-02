@@ -2,23 +2,27 @@
  <html>
    <head>
 
-     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/semantic.min.css" type="text/css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css" rel="stylesheet" />
+     
 
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/solarized-light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/semantic.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/languages/java.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
 
-      <style>
-        
+     
+
+     <style>
+       
 
 body 
 {
@@ -36,23 +40,13 @@ figcaption
   align-items: center;
 }
 
-.credits
-{
-  min-height:20px;
-}
 
 
-    </style>
+     </style>
 
-  </head>
+   </head>
 
   <body>
-
-    
-
-
-
-  <div class="ui container">
     
 
 <style>
@@ -74,17 +68,36 @@ h1
 {
   font-style:italic;
   font-size:130%;
-  border-bottom: thin solid black;
+  border-bottom:thin solid black;
 }
+
 h2
 {
   font-size:110%;
   border-bottom: thin solid black;
 }
+
 h3
 {
   font-size:100%;
   border-bottom: thin solid black;
+}
+
+body
+{
+  overflow-y: scroll;
+}
+
+.pushable > .pusher
+{
+  padding-bottom: 1.5rem;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
 }
 
 
@@ -93,96 +106,79 @@ h3
 
 <div class="ui fixed top pointing inverted menu labmenu">
   <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
     <a href="../index.html">
-      <i class="sitemap icon"></i>
-      Introduction to HTML,CSS and Bootstrap
+      topic
     </a>
   </header>
   <div class="right tab-menu menu">
     
-      <a class="item" data-tab="node_lab1">
-        node_lab1
-      </a>
+    <a class="item" data-tab="node_lab1">
+      node_lab1
+    </a>
     
-      <a class="item" data-tab="01">
-        01
-      </a>
+    <a class="item" data-tab="01">
+      01
+    </a>
     
-      <a class="item" data-tab="02">
-        02
-      </a>
+    <a class="item" data-tab="02">
+      02
+    </a>
     
-      <a class="item" data-tab="03">
-        03
-      </a>
+    <a class="item" data-tab="03">
+      03
+    </a>
     
-      <a class="item" data-tab="04">
-        04
-      </a>
+    <a class="item" data-tab="04">
+      04
+    </a>
     
-      <a class="item" data-tab="05">
-        05
-      </a>
+    <a class="item" data-tab="05">
+      05
+    </a>
     
-      <a class="item" data-tab="06">
-        06
-      </a>
-    
-      <a class="item" data-tab="07">
-        07
-      </a>
-    
-      <a class="item" data-tab="08">
-        08
-      </a>
-    
-      <a class="item" data-tab="09">
-        09
-      </a>
-    
-      <a class="item" data-tab="10">
-        10
-      </a>
-    
-      <a class="item" data-tab="11">
-        11
-      </a>
-    
-      <a class="item" data-tab=".">
-        .
-      </a>
-    
-      <a class="item" data-tab=".">
-        .
-      </a>
-    
-    </div>
+    <a class="item" href="../../index.html">
+      <i class="home icon"></i>
+    </a>
+  </div>
 </div>
 
-<br><br>
-
-  
-  <div  class="ui tab segment lab" data-tab="node_lab1">
-    <h1>Lab 6: Node and Express 1</h1>
+<div class="ui segment pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    
+      
+        <a class="item" href="../../topic01/book-1/index.html">
+          Lab-JavaScript-01
+        </a>
+      
+    
+      
+        <a class="active item" href="../../topic02/book-1/index.html">
+          node_lab1
+        </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment">
+      <br>
+      
+      <div  class="ui tab segment lab" data-tab="node_lab1">
+        <h1>Lab 6: Node and Express 1</h1>
 <p><img src="./img/Node_getting_git_info_001.png" alt=""></p>
 <p>In previous labs you have used the node shell to execute Javascript and run a simple http service. This lab introduces <strong>node.js</strong> as a server-side technology. Now we will use node.js to run javascript programs on the &quot;server-side&quot; which are capable of servicing HTTP requests.  In this lab you will learn how to:
-- Use git and Github
+- Create and use a remote repo on Github
 - Set node up as a HTTP server.
 - Use Node&#39;s built in http module to create a simple HTTP server.
 - Node&#39;s packaging system.
 - How to host your existing web resources in a Node.js HTTP server.
 - How to do a simple route for a HTTP request.</p>
 
-  </div>
- 
-  <div  class="ui tab segment lab" data-tab="01">
-    <h1><img src="git1.png" alt=""></h1>
-<p>You are now going to start using Git to maintain your lab work and assignment work. </p>
-
-  </div>
- 
-  <div  class="ui tab segment lab" data-tab="02">
-    <h1>Get Git</h1>
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="01">
+        <h1>Get Git</h1>
+<p><a href="/img/git1.png">git</a></p>
 <h4>Windows OS</h4>
 <p>If you&#39;re on Windows, download the  <strong>GitHub Desktop</strong>, from <a href="https://desktop.github.com/">here</a> which includes Git, and use the Git Shell for your terminal.</p>
 <h4>Mac</h4>
@@ -192,20 +188,12 @@ h3
 <p><code>$ sudo yum install git-all</code></p>
 <p>For Debian-based distributions use:</p>
 <p><code>$ sudo apt-get install git-all</code></p>
-
-  </div>
- 
-  <div  class="ui tab segment lab" data-tab="03">
-    <h1>Clone a Repository</h1>
+<h2>Clone a Repository</h2>
 <h3>Clone the samples repository</h3>
-<p>Select a location on your machine where you would like to keep the code examples taken from the weekly talks (probably where you have your angular_samples folder). Open a terminal window in that location and clone the samples repository:</p>
-<p><code>git clone https://github.com/fxwalsh/ewd_samples_2016.git</code></p>
+<p>Select a location on your machine where you would like to keep the code examples taken from the weekly talks. Open a terminal window in that location and clone the samples repository:</p>
+<pre><code>git clone https://github.com/fxwalsh/ewd_samples_2017.git</code></pre>
 <p>This should create a new folder called <em>ewd_samples_2016</em>. Open the folder and you should see the angular samples and the node samples from the lecture slides. We will use this repository to update our sample code as the module progresses. You will need to <em>pull</em> the repository each week to get the latest samples. </p>
-
-  </div>
- 
-  <div  class="ui tab segment lab" data-tab="04">
-    <h1>Create a repository</h1>
+<h2>Create a repository</h2>
 <p>A repository is essentially a project. You can imagine it as a project&#39;s folder with all the related files inside of it.
 <img src="repos.png" alt="">
 You tell Git what your project is and Git will start tracking all of the changes to that folder. Files added or subtracted or even a single letter in a single file changed -- all of it&#39;s tracked and time stamped by Git. That&#39;s version control.</p>
@@ -217,14 +205,10 @@ Make a new folder</p>
 <p>To create a new Git instance for a project:</p>
 <p><code>$ git init</code></p>
 <p>It will just return you to a new line. If you want to be double-sure that it&#39;s a Git repository, type <code>git status</code> and if it doesn&#39;t return &#39;fatal: Not a git repository...&#39;, you&#39;ve got a local repo!</p>
-
-  </div>
- 
-  <div  class="ui tab segment lab" data-tab="05">
-    <h1>Add to the repository</h1>
+<h1>Add to the repository</h1>
 <p>Open a text editor. Now write a couple of lines of text:</p>
-<p><code>#Enterprise Web Development practical lab repository</code>
-and save the file as readme.md in the &#39;ewd-labs&#39; folder. </p>
+<pre><code>#Enterprise Web Development practical lab repository</code></pre>
+<p>and save the file as readme.md in the &#39;ewd-labs&#39; folder. </p>
 <h3>Status, Add and Commit Changes</h3>
 <p>Next check the status of your repository to find out if there have been changes. Below in this terminal, you should still be within the &#39;ewd-labs&#39; you created. See if there are changes listed:</p>
 <p><code>$ git status</code></p>
@@ -238,10 +222,10 @@ and save the file as readme.md in the &#39;ewd-labs&#39; folder. </p>
 <p><code>$ git diff</code></p>
 <p>Now with what you just learned above, commit this latest change.</p>
 
-  </div>
- 
-  <div  class="ui tab segment lab" data-tab="06">
-    <h2>Github</h2>
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="02">
+        <h2>Github</h2>
 <p>The repository you&#39;ve created so far is just on your computer, which is handy, but makes it pretty hard to share and work with others on.</p>
 <h3>Create a GitHub Account</h3>
 <p>GitHub is a website that allows people everywhere to upload what they&#39;re working on with Git and to easily work together.</p>
@@ -250,11 +234,7 @@ and save the file as readme.md in the &#39;ewd-labs&#39; folder. </p>
 <p>Add your GitHub username to your Git configuration, which will be needed in order to verify the upcoming challenges. Save it exactly as you created it on GitHub — capitalise where capitalised, and remember you don&#39;t need to enter the &quot;&lt;&quot; and &quot;&gt;&quot; .</p>
 <p>Add your GitHub username to your configuration:</p>
 <p><code>$ git config --global user.username &lt;YOUR_GITHUB_USERNAME&gt;</code></p>
-
-  </div>
- 
-  <div  class="ui tab segment lab" data-tab="07">
-    <h2>Remote Repository</h2>
+<h2>Remote Repository</h2>
 <p>When you put something on GitHub, that copy lives on one of GitHub&#39;s servers. This makes it a remote repository because it is not on your computer, but on a server, &quot;remote&quot; and somewhere else. By pushing your local (on your computer) changes to it, you keep it up to date.</p>
 <p>Others can always get the latest from your project by pulling your changes down from the remote (and onto their computer). This is how everyone can work on a project together without needing access to your computer where your local copy is stored.</p>
 <h3>Create a Remote Repository</h3>
@@ -282,20 +262,16 @@ $ git remote set-url origin &lt;URLFROMGITHUB&gt;</code></pre>
 <p><code>$ git push origin master</code></p>
 <p>Now go to GitHub and refresh the page of your repository. Everything is the same locally and remotely. Congrats on your first public repository! You will use this repository to contain the rest of your lab work.</p>
 
-  </div>
- 
-  <div  class="ui tab segment lab" data-tab="08">
-    <h1>Node.js</h1>
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="03">
+        <h1>Node.js</h1>
 <p>You should have node on your machine already. Check by entering the following in a terminal window: <code>$ node -v</code>. If it does not recognise the command you probably need to install node.  </p>
 <p>If you do not have Node.js installed in you machine, please go to <a href="http://nodejs.org/">nodejs.org</a> and download/install node for your platform. To check if node is working, open a command line/terminal window on your machine and enter <code>node -v</code>. IT should respond as follows:</p>
 <pre><code>&gt; node -v
 v4.x.x</code></pre>
 <p>The work for this lab has been tested with node version 0.13.0 but should be ok with later versions.</p>
-
-  </div>
- 
-  <div  class="ui tab segment lab" data-tab="09">
-    <h1>The &quot;Hello World&quot; HTTP Server</h1>
+<h2>The &quot;Hello World&quot; HTTP Server</h2>
 <p>We will be using node as a web application platform. In this step we&#39;ll set up a simple HTTP server that responds to every request with the plain text message &quot;Hello World&quot;. Create a new folder called <em>node-lab-1</em> in the <em>ewd-labs</em> folder. Create a new file called &quot;app1.js&quot; in the <em>node-lab-1</em> folder  with the following contents:</p>
 <pre><code class="lang-javascript">// Load the http module to create an http server.
 var http = require(&#39;http&#39;);
@@ -317,7 +293,7 @@ To run the server open a terminal/command window in the lab6 folder and enter:</
 <pre><code>node app1.js</code></pre>
 <p>Now open your browser to &#39;<a href="http://localhost:8000">http://localhost:8000</a>&#39;. You should see the following:</p>
 <blockquote>
-<p>![](Screenshot from 2015-03-02 16:42:09.png)</p>
+<p>![Node Hello World](Screenshot from 2015-03-02 16:42:09.png)</p>
 </blockquote>
 <p>The connection function is invoked with a <strong>req</strong> and <strong>res</strong> object. The <strong>req</strong> object represents the HTTP request and is a readable stream that emits &#39;data&#39; events for each incoming piece of data (like a form submission or file upload). The <strong><em>res</em></strong> object represents the HTTP response and is used to send data back to the client. In our case we are simply sending a 200 OK header, as well as the body &#39;Hello World&#39;.</p>
 <h3>Nodes Module system</h3>
@@ -352,10 +328,10 @@ exports.french = function(){
 <h3>Commit your changes</h3>
 <p>Commit the changes you have just made using git.</p>
 
-  </div>
- 
-  <div  class="ui tab segment lab" data-tab="10">
-    <h1>Node Package Manager</h1>
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="04">
+        <h1>Node Package Manager</h1>
 <p>Node Package Manager(NPM), is the program you use to install third party Node modules. It comes with more recent versions of Node so no need to install it. </p>
 <h3>package.json</h3>
 <p>If you&#39;re developing a Node program or library for deployment, it&#39;s a good practice to include a package.json file. This file is a manifest of the Node project and is located at your project root. It contains various information specific to your project. To create a package.json file, run the following in the <em>node-lab-1</em> folder:</p>
@@ -385,10 +361,10 @@ To use the package, add another &quot;require&quot; to the server code:</p>
 <p>Do a <code>git status</code>. Notice the modules contained in the <code>node_modules</code> folder are not listed. Git will ignore them from now on. Now add and commit your changes as usual.</p>
 <hr>
 
-  </div>
- 
-  <div  class="ui tab segment lab" data-tab="11">
-    <h1>Express Applications</h1>
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="05">
+        <h1>Express Applications</h1>
 <p>We&#39;ll now add some static content to our web server. Up to now you&#39;ve used http-server which is fine for prototyping HTML. We&#39;ll now move to Express, the package we installed in the last section. Express is a richer web app package and provides a nice high level approach to serving up static content. It&#39;s based around the idea of creating an Express &quot;app&quot; that you can easily configure. One of the configuration options allows you to specify the location of your publicly available content such as static HTML, CSS, client-side Javascript files etc.</p>
 <ul>
 <li>In your <em>node-lab-1</em> folder, create the following folder structure:<pre><code>+public 
@@ -441,97 +417,81 @@ console.log(&quot;Server running at http://127.0.0.1:8000/&quot;);</code></pre>
 Now push your changes to your remote repository.</p>
 <p><code>git push origin master</code></p>
 
+      </div>
+     
+    </div>
   </div>
- 
-  <div  class="ui tab segment lab" data-tab=".">
-    <h1>Summary</h1>
-<ul>
-<li><a href="README.md">Git</a><ul>
-<li><a href="github.md">Git</a></li>
-<li><a href="getgit_md.md">Get Git</a></li>
-<li><a href="clone_a_repo.md">Clone a Repo</a></li>
-<li><a href="create_a_repo.md">Create a Repo</a></li>
-<li><a href="add_to_a_repo.md">Add to a Repo</a></li>
-</ul>
-</li>
-<li><a href="git_hub.md">Github</a><ul>
-<li><a href="create_a_repo_on_github.md">Create a Repo on Github</a></li>
-</ul>
-</li>
-<li><a href="chapter1.md">Node.js web server</a><ul>
-<li><a href="node_http_server.md">The &quot;Hello World&quot; Server</a></li>
-<li><a href="node_package_manager.md">Node Package Manager</a></li>
-<li><a href="processing_requests_in_node.md">Express Applications</a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
- 
-  <div  class="ui tab segment lab" data-tab=".">
-    <h1>Get Git</h1>
-<h4>Windows OS</h4>
-<p>If you&#39;re on Windows, download the  <strong>GitHub Desktop</strong>, from <a href="https://desktop.github.com/">here</a> which includes Git, and use the Git Shell for your terminal.</p>
-<h4>Mac</h4>
-<p>You can install Git automatically. To do this, open the Terminal application from spotlight and type <code>git</code>. This will prompt Git to install the rest of the command line tools for Git. This should only take a few minutes. It will ask if you would like to download Xcode, which you can ignore.</p>
-<h4>Linux</h4>
-<p>You can use the basic package-management tool that comes with your distribution. For Fedora use:</p>
-<p><code>$ sudo yum install git-all</code></p>
-<p>For Debian-based distributions use:</p>
-<p><code>$ sudo apt-get install git-all</code></p>
-
-  </div>
- 
-
-
-<script>
-$('.ui.menu .item')
-  .tab({
-    history: true,
-    historyType: 'hash'
-  })
-;
-</script>
-
-   </div>
-
-   
-  <br><br>
-  <div class="ui bottom fixed borderless menu">
-    <div class="ui small item">
-    <p id="footertext">
-    Prepared by  Frank Walsh (fxwalsh@wit.ie). Except where otherwise noted, this content is licensed under a
-     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
-       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
-     </a>
-     </p>
+</div>
+  <div class="ui bottom fixed borderless right menu">
+    <div class="ui right tiny menu">
+      <div class="ui mini message segment">
+        Frank Walsh (fxwalsh@wit.ie).
+        <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+            target="_blank">Creative Commons License
+        </a>
+      </div>
     </div>
   </div>
 
+<script>
+  $(document).on('keydown', function (e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+</script>
+
+    <footer>
+
+    </footer>
     <script>
-      
-$(document).ready(function()
-{
-  $("img").addClass ("ui image");
+      $(document).ready(function () {
+  $('img').addClass('ui image');
   $('.ui.embed').embed();
 
-  var images = $(".lab img");
-  jQuery.each(images, function(i)  {
-    if((images[i].alt).length > 0)
-    {
-      var div_img = $(document.createElement("div")).addClass("ui segment");
-      $(images[i]).wrap(div_img);
-      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
-      div_label.append(images[i].alt);
-      $(div_label).insertBefore(images[i]);
+  const $images = $('.lab img');
+  jQuery.each($images, function (i) {
+    if (($images[i].alt).length > 0) {
+      const divImg = $(document.createElement('div')).addClass('ui basic segment');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass('ui blue ribbon label');
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
     }
   });
 
+  $('.ui.embed').embed();
 
-})
+  $('.ui.menu .item')
+      .tab({
+        history: true,
+        historyType: 'hash',
+      });
 
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+      .sidebar({ context: $('.pushable') })
+      .sidebar('setting', 'transition', 'slide out')
+      .sidebar('attach events', '#toc');
+});
 
     </script>
-
   </body>
+
  </html>
