@@ -1,0 +1,537 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+      <style>
+        
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.credits
+{
+  min-height:20px;
+}
+
+
+    </style>
+
+  </head>
+
+  <body>
+
+    
+
+
+
+  <div class="ui container">
+    
+
+<style>
+  
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom: thin solid black;
+}
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+
+
+</style>
+
+<div class="ui fixed top pointing inverted menu labmenu">
+  <header class="header item">
+    <a href="../index.html">
+      <i class="sitemap icon"></i>
+      Introduction to HTML,CSS and Bootstrap
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    
+      <a class="item" data-tab="node_lab1">
+        node_lab1
+      </a>
+    
+      <a class="item" data-tab="01">
+        01
+      </a>
+    
+      <a class="item" data-tab="02">
+        02
+      </a>
+    
+      <a class="item" data-tab="03">
+        03
+      </a>
+    
+      <a class="item" data-tab="04">
+        04
+      </a>
+    
+      <a class="item" data-tab="05">
+        05
+      </a>
+    
+      <a class="item" data-tab="06">
+        06
+      </a>
+    
+      <a class="item" data-tab="07">
+        07
+      </a>
+    
+      <a class="item" data-tab="08">
+        08
+      </a>
+    
+      <a class="item" data-tab="09">
+        09
+      </a>
+    
+      <a class="item" data-tab="10">
+        10
+      </a>
+    
+      <a class="item" data-tab="11">
+        11
+      </a>
+    
+      <a class="item" data-tab=".">
+        .
+      </a>
+    
+      <a class="item" data-tab=".">
+        .
+      </a>
+    
+    </div>
+</div>
+
+<br><br>
+
+  
+  <div  class="ui tab segment lab" data-tab="node_lab1">
+    <h1>Lab 6: Node and Express 1</h1>
+<p><img src="./img/Node_getting_git_info_001.png" alt=""></p>
+<p>In previous labs you have used the node shell to execute Javascript and run a simple http service. This lab introduces <strong>node.js</strong> as a server-side technology. Now we will use node.js to run javascript programs on the &quot;server-side&quot; which are capable of servicing HTTP requests.  In this lab you will learn how to:
+- Use git and Github
+- Set node up as a HTTP server.
+- Use Node&#39;s built in http module to create a simple HTTP server.
+- Node&#39;s packaging system.
+- How to host your existing web resources in a Node.js HTTP server.
+- How to do a simple route for a HTTP request.</p>
+
+  </div>
+ 
+  <div  class="ui tab segment lab" data-tab="01">
+    <h1><img src="git1.png" alt=""></h1>
+<p>You are now going to start using Git to maintain your lab work and assignment work. </p>
+
+  </div>
+ 
+  <div  class="ui tab segment lab" data-tab="02">
+    <h1>Get Git</h1>
+<h4>Windows OS</h4>
+<p>If you&#39;re on Windows, download the  <strong>GitHub Desktop</strong>, from <a href="https://desktop.github.com/">here</a> which includes Git, and use the Git Shell for your terminal.</p>
+<h4>Mac</h4>
+<p>You can install Git automatically. To do this, open the Terminal application from spotlight and type <code>git</code>. This will prompt Git to install the rest of the command line tools for Git. This should only take a few minutes. It will ask if you would like to download Xcode, which you can ignore.</p>
+<h4>Linux</h4>
+<p>You can use the basic package-management tool that comes with your distribution. For Fedora use:</p>
+<p><code>$ sudo yum install git-all</code></p>
+<p>For Debian-based distributions use:</p>
+<p><code>$ sudo apt-get install git-all</code></p>
+
+  </div>
+ 
+  <div  class="ui tab segment lab" data-tab="03">
+    <h1>Clone a Repository</h1>
+<h3>Clone the samples repository</h3>
+<p>Select a location on your machine where you would like to keep the code examples taken from the weekly talks (probably where you have your angular_samples folder). Open a terminal window in that location and clone the samples repository:</p>
+<p><code>git clone https://github.com/fxwalsh/ewd_samples_2016.git</code></p>
+<p>This should create a new folder called <em>ewd_samples_2016</em>. Open the folder and you should see the angular samples and the node samples from the lecture slides. We will use this repository to update our sample code as the module progresses. You will need to <em>pull</em> the repository each week to get the latest samples. </p>
+
+  </div>
+ 
+  <div  class="ui tab segment lab" data-tab="04">
+    <h1>Create a repository</h1>
+<p>A repository is essentially a project. You can imagine it as a project&#39;s folder with all the related files inside of it.
+<img src="repos.png" alt="">
+You tell Git what your project is and Git will start tracking all of the changes to that folder. Files added or subtracted or even a single letter in a single file changed -- all of it&#39;s tracked and time stamped by Git. That&#39;s version control.</p>
+<p>You&#39;re going to create a new folder and initialize it as a Git repository.
+Make a new folder</p>
+<p><code>$ mkdir ewd-labs</code></p>
+<p>To go into that folder:</p>
+<p><code>$ cd ewd-labs</code></p>
+<p>To create a new Git instance for a project:</p>
+<p><code>$ git init</code></p>
+<p>It will just return you to a new line. If you want to be double-sure that it&#39;s a Git repository, type <code>git status</code> and if it doesn&#39;t return &#39;fatal: Not a git repository...&#39;, you&#39;ve got a local repo!</p>
+
+  </div>
+ 
+  <div  class="ui tab segment lab" data-tab="05">
+    <h1>Add to the repository</h1>
+<p>Open a text editor. Now write a couple of lines of text:</p>
+<p><code>#Enterprise Web Development practical lab repository</code>
+and save the file as readme.md in the &#39;ewd-labs&#39; folder. </p>
+<h3>Status, Add and Commit Changes</h3>
+<p>Next check the status of your repository to find out if there have been changes. Below in this terminal, you should still be within the &#39;ewd-labs&#39; you created. See if there are changes listed:</p>
+<p><code>$ git status</code></p>
+<p>Then add the file you just created to the files you&#39;d like to commit (aka save) to change.</p>
+<p><code>$ git add readme.md</code></p>
+<p>Finally, commit those changes to the repository&#39;s history with a short description of the updates.</p>
+<p><code>$ git commit -m &quot;&lt;your commit message&gt;&quot;</code></p>
+<h3>Make More Changes</h3>
+<p>Now add another line to <em>readme.md</em> and save.</p>
+<p>In terminal, you can view the difference between the file now and how it was at your last commit.</p>
+<p><code>$ git diff</code></p>
+<p>Now with what you just learned above, commit this latest change.</p>
+
+  </div>
+ 
+  <div  class="ui tab segment lab" data-tab="06">
+    <h2>Github</h2>
+<p>The repository you&#39;ve created so far is just on your computer, which is handy, but makes it pretty hard to share and work with others on.</p>
+<h3>Create a GitHub Account</h3>
+<p>GitHub is a website that allows people everywhere to upload what they&#39;re working on with Git and to easily work together.</p>
+<p>Visit <a href="http://github.com">github.com</a> and sign up for a free account.</p>
+<h3>Add username to Git</h3>
+<p>Add your GitHub username to your Git configuration, which will be needed in order to verify the upcoming challenges. Save it exactly as you created it on GitHub — capitalise where capitalised, and remember you don&#39;t need to enter the &quot;&lt;&quot; and &quot;&gt;&quot; .</p>
+<p>Add your GitHub username to your configuration:</p>
+<p><code>$ git config --global user.username &lt;YOUR_GITHUB_USERNAME&gt;</code></p>
+
+  </div>
+ 
+  <div  class="ui tab segment lab" data-tab="07">
+    <h2>Remote Repository</h2>
+<p>When you put something on GitHub, that copy lives on one of GitHub&#39;s servers. This makes it a remote repository because it is not on your computer, but on a server, &quot;remote&quot; and somewhere else. By pushing your local (on your computer) changes to it, you keep it up to date.</p>
+<p>Others can always get the latest from your project by pulling your changes down from the remote (and onto their computer). This is how everyone can work on a project together without needing access to your computer where your local copy is stored.</p>
+<h3>Create a Remote Repository</h3>
+<p>You want to sync your local version with one stored on GitHub.com called the remote version. So first create an empty remote repository on GitHub.com.</p>
+<p>Go to github.com, log in, and click the &#39;+&#39; in the top right to create a new repository.
+Give it a name that matches your local repository&#39;s name, &#39;ewd-labs&#39;, and a short description.
+Make it public.
+Don&#39;t initialise with a README because we already have a file, locally, named &#39;readme.md&#39;.
+Leave .gitignore and license on &#39;none&#39;.
+Click create repository!</p>
+<h3>Connect your Local to your Remote</h3>
+<p>Now you&#39;ve got an empty repository started on GitHub.com. At the top you&#39;ll see &#39;Quick Setup&#39;, make sure the &#39;HTTP&#39; button is selected and copy the address — this is the location (address) of your repository on GitHub&#39;s servers.</p>
+<p>Back in your terminal, and inside of the &#39;ewd-labs&#39; folder that you initialised as a Git repository, you want to tell Git the location of the remote version on GitHub&#39;s servers. You can have multiple remotes so each requires a name. For your main one, this is commonly named origin.</p>
+<p><code>$ git remote add origin &lt;URLFROMGITHUB&gt;</code>
+Your local repository now knows where your remote one named &#39;origin&#39; lives on GitHub&#39;s servers. T</p>
+<pre><code>A note:
+
+If you have GitHub for Windows on your computer, a remote named &#39;origin&#39; is automatically created. In that case, you&#39;ll just need to tell it what URL to associate with origin. Use this command instead of the &#39;add&#39; one above:
+
+$ git remote set-url origin &lt;URLFROMGITHUB&gt;</code></pre>
+<h3>Push Work to your Remote</h3>
+<p>Next you want to push (send) everything you&#39;ve done locally to GitHub. Ideally you want to stay in sync, meaning your local and remote versions match.</p>
+<p>Git has a branching system so that you can work on different parts of a project at different times. We&#39;ll learn more about that later, but by default the first branch is named &#39;master&#39;. When you push (and later pull) from a project, you tell Git the branch name you want and the name of the remote that it lives on.</p>
+<p>In this case, we&#39;ll send our branch named &#39;master&#39; to our remote on GitHub named &#39;origin&#39;.</p>
+<p><code>$ git push origin master</code></p>
+<p>Now go to GitHub and refresh the page of your repository. Everything is the same locally and remotely. Congrats on your first public repository! You will use this repository to contain the rest of your lab work.</p>
+
+  </div>
+ 
+  <div  class="ui tab segment lab" data-tab="08">
+    <h1>Node.js</h1>
+<p>You should have node on your machine already. Check by entering the following in a terminal window: <code>$ node -v</code>. If it does not recognise the command you probably need to install node.  </p>
+<p>If you do not have Node.js installed in you machine, please go to <a href="http://nodejs.org/">nodejs.org</a> and download/install node for your platform. To check if node is working, open a command line/terminal window on your machine and enter <code>node -v</code>. IT should respond as follows:</p>
+<pre><code>&gt; node -v
+v4.x.x</code></pre>
+<p>The work for this lab has been tested with node version 0.13.0 but should be ok with later versions.</p>
+
+  </div>
+ 
+  <div  class="ui tab segment lab" data-tab="09">
+    <h1>The &quot;Hello World&quot; HTTP Server</h1>
+<p>We will be using node as a web application platform. In this step we&#39;ll set up a simple HTTP server that responds to every request with the plain text message &quot;Hello World&quot;. Create a new folder called <em>node-lab-1</em> in the <em>ewd-labs</em> folder. Create a new file called &quot;app1.js&quot; in the <em>node-lab-1</em> folder  with the following contents:</p>
+<pre><code class="lang-javascript">// Load the http module to create an http server.
+var http = require(&#39;http&#39;);
+
+// Configure our HTTP server to respond with Hello World to all requests.
+var server = http.createServer(function (request, response) {
+  response.writeHead(200, {&quot;Content-Type&quot;: &quot;text/plain&quot;});
+  response.end(&quot;Hello World\n&quot;);
+});
+
+// Listen on port 8000, IP defaults to 127.0.0.1
+server.listen(8000);
+
+// Put a friendly message on the terminal
+console.log(&quot;Server running at http://127.0.0.1:8000/&quot;);</code></pre>
+<p>In the first line, we include the http core module and assign it to a variable called <code>http</code>. Next we assign a variable called <code>server</code> from the <code>http.createServer(...)</code> function. The argument passed into this call is the function that is called whenever an http request comes in.
+Finally we call <code>server.listen(8000)</code> to tell node.js the port on which we want our server to run. 
+To run the server open a terminal/command window in the lab6 folder and enter:</p>
+<pre><code>node app1.js</code></pre>
+<p>Now open your browser to &#39;<a href="http://localhost:8000">http://localhost:8000</a>&#39;. You should see the following:</p>
+<blockquote>
+<p>![](Screenshot from 2015-03-02 16:42:09.png)</p>
+</blockquote>
+<p>The connection function is invoked with a <strong>req</strong> and <strong>res</strong> object. The <strong>req</strong> object represents the HTTP request and is a readable stream that emits &#39;data&#39; events for each incoming piece of data (like a form submission or file upload). The <strong><em>res</em></strong> object represents the HTTP response and is used to send data back to the client. In our case we are simply sending a 200 OK header, as well as the body &#39;Hello World&#39;.</p>
+<h3>Nodes Module system</h3>
+<p>Node.js provides a simple module system that lets you structure your program into different files. In our <em>app1.js</em> example, we use the core http module to create our HTTP service. You can also write your own modules. When creating a module, this can be interpreted as moving all related functions into a file. For example, update your <em>app1.js</em> file as follows:</p>
+<pre><code class="lang-javascript">// Load the http module to create an http server.
+var http = require(&#39;http&#39;);
+// Load the greeting module to provide the greeting.
+var greeting = require(&#39;./greeting&#39;);
+
+// Configure our HTTP server to respond with Hello World to all requests.
+var server = http.createServer(function (request, response) {
+  response.writeHead(200, {&quot;Content-Type&quot;: &quot;text/plain&quot;});
+  response.end(greeting.english());
+});
+
+// Listen on port 8000, IP defaults to 127.0.0.1
+server.listen(8000);
+
+// Put a friendly message on the terminal
+console.log(&quot;Server running at http://127.0.0.1:8001/&quot;);</code></pre>
+<p>Now create a new file called &#39;greeting.js&#39; in the same folder with the following content:</p>
+<pre><code class="lang-javascript">//Greeting in English
+exports.english = function(){
+    return &quot;Hello World!&quot;;
+}
+//Greeting in French
+exports.french = function(){
+    return &quot;Bonjour tout le Monde!&quot;;
+}</code></pre>
+<p>Now test your file again using a browser. The <code>exports</code> expose the functions to other modules that require them. To access the exported functions in out simple server, we can load the greeting module using the require function in <code>var greeting = require(&#39;./greeting&#39;);</code>. </p>
+<p>As you will see, the core modules give you very few modules. Most of the real power in Node.js is contained in the third party modules available through the Node Package Management system(NPM).</p>
+<h3>Commit your changes</h3>
+<p>Commit the changes you have just made using git.</p>
+
+  </div>
+ 
+  <div  class="ui tab segment lab" data-tab="10">
+    <h1>Node Package Manager</h1>
+<p>Node Package Manager(NPM), is the program you use to install third party Node modules. It comes with more recent versions of Node so no need to install it. </p>
+<h3>package.json</h3>
+<p>If you&#39;re developing a Node program or library for deployment, it&#39;s a good practice to include a package.json file. This file is a manifest of the Node project and is located at your project root. It contains various information specific to your project. To create a package.json file, run the following in the <em>node-lab-1</em> folder:</p>
+<pre><code>npm init</code></pre>
+<p>You&#39;ll now be asked a few questions about your node app. Answer as follows:
+- name: (node-lab-1) 
+- version: (1.0.0) ;
+- description: simple http server;
+- entry point: app1.js;
+- keywords: http node
+- author: <em>your name</em>
+- license: (ISC) </p>
+<p>You can leave the others blank.</p>
+<h3>Installing Modules</h3>
+<h4>Local Modules</h4>
+<p>The most common usage of npm is to install packages that have been published to the npm registry. An example is the <a href="https://www.npmjs.com/package/express">express</a> package. To install request, open a terminal/command prompt in the node-lab-1 folder. Enter the following command:</p>
+<pre><code>npm install express --save</code></pre>
+<p>This will install the package to the <code>node_modules</code> folder in the project folder. All locally installed modules will be installed here. 
+To use the package, add another &quot;require&quot; to the server code:</p>
+<pre><code>require(&#39;express&#39;)</code></pre>
+<p>We will be using the Express package later on to help us create web apis.</p>
+<h3>Add .gitignore file</h3>
+<p>It&#39;s probably best to let NPM, and the <em>package.json</em> file, manage the project dependencies contained in node_modules folder. Create a new  file using a text editor and enter the following text:</p>
+<pre><code>node_modules </code></pre>
+<p>Save the file as <code>.gitignore</code> in your <em>node-lab-1</em> folder.</p>
+<h3>Commit changes</h3>
+<p>Do a <code>git status</code>. Notice the modules contained in the <code>node_modules</code> folder are not listed. Git will ignore them from now on. Now add and commit your changes as usual.</p>
+<hr>
+
+  </div>
+ 
+  <div  class="ui tab segment lab" data-tab="11">
+    <h1>Express Applications</h1>
+<p>We&#39;ll now add some static content to our web server. Up to now you&#39;ve used http-server which is fine for prototyping HTML. We&#39;ll now move to Express, the package we installed in the last section. Express is a richer web app package and provides a nice high level approach to serving up static content. It&#39;s based around the idea of creating an Express &quot;app&quot; that you can easily configure. One of the configuration options allows you to specify the location of your publicly available content such as static HTML, CSS, client-side Javascript files etc.</p>
+<ul>
+<li>In your <em>node-lab-1</em> folder, create the following folder structure:<pre><code>+public 
+  |-javascript
+  |-stylesheets</code></pre>
+</li>
+<li>Add the html from your last lab to the public folder. Alternatively, you can add the solution to <em>lab2</em> from <a href="https://drive.google.com/file/d/0BxtnCYpIWp3Da215RGhIT0JyYjQ/view?usp=sharing">here</a>. Make sure the files are in the public folder.</li>
+<li>In node-lab-1, create a new file called <em>app2.js</em>  that contains the following javascript:</li>
+</ul>
+<pre><code class="lang-javascript">var express = require(&#39;express&#39;);
+//create an express app
+var app = express();
+
+// Configure the app to serve up content from public directory
+app.use(express.static(__dirname + &#39;/public&#39;));
+
+// Listen on port 8000, IP defaults to 127.0.0.1
+app.listen(8000)
+
+// Put a friendly message on the terminal
+console.log(&quot;Server running at http://127.0.0.1:8000/&quot;);</code></pre>
+<ul>
+<li>Run the express server by entering <code>node app2.js</code> at the terminal/command line as before. Now test the application as before in a browser. It should work exactly as before. </li>
+</ul>
+<h4>Simple Routing</h4>
+<p>Express gives us an easy way of mapping specific URL paths to Javascript functions. You will now replicate the functionality from the &quot;Hello World&quot; section so that a HTTP GET request for the URL path  &#39;/greeting/&#39; will respond with &quot;Hello World&quot;. Modify the server.js by adding an <code>app.get([route],[callback function])</code>.
+- Modify the server.js script to include a route for /greeting that responds with &quot;hello world&quot;.</p>
+<pre><code class="lang-javascript">var express = require(&#39;express&#39;);
+//Add greeting module
+var greeting = require(&#39;./greeting&#39;);
+//create an express app
+var app = express();
+
+// Configure the app to serve up content from public directory
+app.use(express.static(__dirname + &#39;/public&#39;));
+
+//add route for /greeting 
+app.get(&#39;/greeting&#39;,function (request, response) {
+  response.writeHead(200, {&quot;Content-Type&quot;: &quot;text/plain&quot;});
+  response.end(greeting.english());
+});
+
+// Listen on port 8000, IP defaults to 127.0.0.1
+app.listen(8000)
+
+// Put a friendly message on the terminal
+console.log(&quot;Server running at http://127.0.0.1:8000/&quot;);</code></pre>
+<h3>Commit and Push to Github</h3>
+<p>Commit your changes using git as before.
+Now push your changes to your remote repository.</p>
+<p><code>git push origin master</code></p>
+
+  </div>
+ 
+  <div  class="ui tab segment lab" data-tab=".">
+    <h1>Summary</h1>
+<ul>
+<li><a href="README.md">Git</a><ul>
+<li><a href="github.md">Git</a></li>
+<li><a href="getgit_md.md">Get Git</a></li>
+<li><a href="clone_a_repo.md">Clone a Repo</a></li>
+<li><a href="create_a_repo.md">Create a Repo</a></li>
+<li><a href="add_to_a_repo.md">Add to a Repo</a></li>
+</ul>
+</li>
+<li><a href="git_hub.md">Github</a><ul>
+<li><a href="create_a_repo_on_github.md">Create a Repo on Github</a></li>
+</ul>
+</li>
+<li><a href="chapter1.md">Node.js web server</a><ul>
+<li><a href="node_http_server.md">The &quot;Hello World&quot; Server</a></li>
+<li><a href="node_package_manager.md">Node Package Manager</a></li>
+<li><a href="processing_requests_in_node.md">Express Applications</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+ 
+  <div  class="ui tab segment lab" data-tab=".">
+    <h1>Get Git</h1>
+<h4>Windows OS</h4>
+<p>If you&#39;re on Windows, download the  <strong>GitHub Desktop</strong>, from <a href="https://desktop.github.com/">here</a> which includes Git, and use the Git Shell for your terminal.</p>
+<h4>Mac</h4>
+<p>You can install Git automatically. To do this, open the Terminal application from spotlight and type <code>git</code>. This will prompt Git to install the rest of the command line tools for Git. This should only take a few minutes. It will ask if you would like to download Xcode, which you can ignore.</p>
+<h4>Linux</h4>
+<p>You can use the basic package-management tool that comes with your distribution. For Fedora use:</p>
+<p><code>$ sudo yum install git-all</code></p>
+<p>For Debian-based distributions use:</p>
+<p><code>$ sudo apt-get install git-all</code></p>
+
+  </div>
+ 
+
+
+<script>
+$('.ui.menu .item')
+  .tab({
+    history: true,
+    historyType: 'hash'
+  })
+;
+</script>
+
+   </div>
+
+   
+  <br><br>
+  <div class="ui bottom fixed borderless menu">
+    <div class="ui small item">
+    <p id="footertext">
+    Prepared by  Frank Walsh (fxwalsh@wit.ie). Except where otherwise noted, this content is licensed under a
+     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
+     </a>
+     </p>
+    </div>
+  </div>
+
+    <script>
+      
+$(document).ready(function()
+{
+  $("img").addClass ("ui image");
+  $('.ui.embed').embed();
+
+  var images = $(".lab img");
+  jQuery.each(images, function(i)  {
+    if((images[i].alt).length > 0)
+    {
+      var div_img = $(document.createElement("div")).addClass("ui segment");
+      $(images[i]).wrap(div_img);
+      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
+      div_label.append(images[i].alt);
+      $(div_label).insertBefore(images[i]);
+    }
+  });
+
+
+})
+
+
+    </script>
+
+  </body>
+ </html>
