@@ -108,7 +108,7 @@ body
   <header class="header item">
     <i id="toc" class="sitemap icon"></i>
     <a href="../index.html">
-      topic
+      Introduction to Version Control and Node.js
     </a>
   </header>
   <div class="right tab-menu menu">
@@ -164,21 +164,22 @@ body
       <br>
       
       <div  class="ui tab segment lab" data-tab="node_lab1">
-        <h1>Lab 6: Node and Express 1</h1>
-<p><img src="./img/Node_getting_git_info_001.png" alt=""></p>
-<p>In previous labs you have used the node shell to execute Javascript and run a simple http service. This lab introduces <strong>node.js</strong> as a server-side technology. Now we will use node.js to run javascript programs on the &quot;server-side&quot; which are capable of servicing HTTP requests.  In this lab you will learn how to:
-- Create and use a remote repo on Github
-- Set node up as a HTTP server.
-- Use Node&#39;s built in http module to create a simple HTTP server.
-- Node&#39;s packaging system.
-- How to host your existing web resources in a Node.js HTTP server.
-- How to do a simple route for a HTTP request.</p>
+        <h2>Node and Express 1</h2>
+<p>This lab introduces <strong>node.js</strong> as a server-side technology. Now we will use node.js to run javascript programs on the &quot;server-side&quot; which are capable of servicing HTTP requests.  In this lab you will learn how to:</p>
+<ul>
+<li>Create and use a remote repo on Github</li>
+<li>Set node up as a HTTP server.</li>
+<li>Use Node&#39;s built in http module to create a simple HTTP server.</li>
+<li>Node&#39;s packaging system.</li>
+<li>How to host your existing web resources in a Node.js HTTP server.</li>
+<li>How to do a simple route for a HTTP request.</li>
+</ul>
 
       </div>
      
       <div  class="ui tab segment lab" data-tab="01">
         <h1>Get Git</h1>
-<p><a href="/img/git1.png">git</a></p>
+<p><img src="./img/git1.png" alt="git"></p>
 <h4>Windows OS</h4>
 <p>If you&#39;re on Windows, download the  <strong>GitHub Desktop</strong>, from <a href="https://desktop.github.com/">here</a> which includes Git, and use the Git Shell for your terminal.</p>
 <h4>Mac</h4>
@@ -192,23 +193,23 @@ body
 <h3>Clone the samples repository</h3>
 <p>Select a location on your machine where you would like to keep the code examples taken from the weekly talks. Open a terminal window in that location and clone the samples repository:</p>
 <pre><code>git clone https://github.com/fxwalsh/ewd_samples_2017.git</code></pre>
-<p>This should create a new folder called <em>ewd_samples_2016</em>. Open the folder and you should see the angular samples and the node samples from the lecture slides. We will use this repository to update our sample code as the module progresses. You will need to <em>pull</em> the repository each week to get the latest samples. </p>
+<p>This should create a new folder called <em>ewd_samples_2017</em>. Open the folder and you should see the node samples from the lecture slides. We will use this repository to update our sample code as the module progresses. You will need to <em>pull</em> the repository each week to get the latest samples.</p>
 <h2>Create a repository</h2>
 <p>A repository is essentially a project. You can imagine it as a project&#39;s folder with all the related files inside of it.
-<img src="repos.png" alt="">
+<img src="./img/repos.png" alt="git repos">
 You tell Git what your project is and Git will start tracking all of the changes to that folder. Files added or subtracted or even a single letter in a single file changed -- all of it&#39;s tracked and time stamped by Git. That&#39;s version control.</p>
 <p>You&#39;re going to create a new folder and initialize it as a Git repository.
 Make a new folder</p>
-<p><code>$ mkdir ewd-labs</code></p>
+<p><code>$ mkdir ewd_labs_2017</code></p>
 <p>To go into that folder:</p>
-<p><code>$ cd ewd-labs</code></p>
+<p><code>$ cd ewd_labs_2017</code></p>
 <p>To create a new Git instance for a project:</p>
 <p><code>$ git init</code></p>
 <p>It will just return you to a new line. If you want to be double-sure that it&#39;s a Git repository, type <code>git status</code> and if it doesn&#39;t return &#39;fatal: Not a git repository...&#39;, you&#39;ve got a local repo!</p>
 <h1>Add to the repository</h1>
 <p>Open a text editor. Now write a couple of lines of text:</p>
 <pre><code>#Enterprise Web Development practical lab repository</code></pre>
-<p>and save the file as readme.md in the &#39;ewd-labs&#39; folder. </p>
+<p>and save the file as readme.md in the &#39;ewd-labs&#39; folder.</p>
 <h3>Status, Add and Commit Changes</h3>
 <p>Next check the status of your repository to find out if there have been changes. Below in this terminal, you should still be within the &#39;ewd-labs&#39; you created. See if there are changes listed:</p>
 <p><code>$ git status</code></p>
@@ -225,7 +226,7 @@ Make a new folder</p>
       </div>
      
       <div  class="ui tab segment lab" data-tab="02">
-        <h2>Github</h2>
+        <h1>Github</h1>
 <p>The repository you&#39;ve created so far is just on your computer, which is handy, but makes it pretty hard to share and work with others on.</p>
 <h3>Create a GitHub Account</h3>
 <p>GitHub is a website that allows people everywhere to upload what they&#39;re working on with Git and to easily work together.</p>
@@ -240,182 +241,350 @@ Make a new folder</p>
 <h3>Create a Remote Repository</h3>
 <p>You want to sync your local version with one stored on GitHub.com called the remote version. So first create an empty remote repository on GitHub.com.</p>
 <p>Go to github.com, log in, and click the &#39;+&#39; in the top right to create a new repository.
-Give it a name that matches your local repository&#39;s name, &#39;ewd-labs&#39;, and a short description.
-Make it public.
-Don&#39;t initialise with a README because we already have a file, locally, named &#39;readme.md&#39;.
-Leave .gitignore and license on &#39;none&#39;.
+Give it a name that matches your local repository&#39;s name, <code>ewd_labs_2017</code>, and a short description.
+Select the following options:
+- make it public
+- <em>don&#39;t</em> create a readme.md (you have one already).
+- create a .gitignore and select the <em>Node</em> option.
 Click create repository!</p>
 <h3>Connect your Local to your Remote</h3>
 <p>Now you&#39;ve got an empty repository started on GitHub.com. At the top you&#39;ll see &#39;Quick Setup&#39;, make sure the &#39;HTTP&#39; button is selected and copy the address — this is the location (address) of your repository on GitHub&#39;s servers.</p>
-<p>Back in your terminal, and inside of the &#39;ewd-labs&#39; folder that you initialised as a Git repository, you want to tell Git the location of the remote version on GitHub&#39;s servers. You can have multiple remotes so each requires a name. For your main one, this is commonly named origin.</p>
-<p><code>$ git remote add origin &lt;URLFROMGITHUB&gt;</code>
-Your local repository now knows where your remote one named &#39;origin&#39; lives on GitHub&#39;s servers. T</p>
-<pre><code>A note:
-
-If you have GitHub for Windows on your computer, a remote named &#39;origin&#39; is automatically created. In that case, you&#39;ll just need to tell it what URL to associate with origin. Use this command instead of the &#39;add&#39; one above:
-
-$ git remote set-url origin &lt;URLFROMGITHUB&gt;</code></pre>
+<p>Back in your terminal, and inside of the &#39;ewd-labs_2017&#39; folder that you initialised as a Git repository, you want to tell Git the location of the remote version on GitHub&#39;s servers. You can have multiple remotes so each requires a name. For your main one, this is commonly named origin.</p>
+<p><code>$ git remote add origin &lt;URLFROMGITHUB&gt;</code></p>
+<p>Your local repository now knows where your remote one named &#39;origin&#39; lives on GitHub&#39;s servers. T</p>
+<blockquote>
+<p>   A note:</p>
+<p>   If you have GitHub for Windows on your computer, a remote named &#39;origin&#39; is automatically created. In that case, you&#39;ll just need to tell it what URL to associate with origin. Use this command instead of the &#39;add&#39; one above:</p>
+<p>   $ git remote set-url origin <URLFROMGITHUB></p>
+</blockquote>
 <h3>Push Work to your Remote</h3>
 <p>Next you want to push (send) everything you&#39;ve done locally to GitHub. Ideally you want to stay in sync, meaning your local and remote versions match.</p>
 <p>Git has a branching system so that you can work on different parts of a project at different times. We&#39;ll learn more about that later, but by default the first branch is named &#39;master&#39;. When you push (and later pull) from a project, you tell Git the branch name you want and the name of the remote that it lives on.</p>
 <p>In this case, we&#39;ll send our branch named &#39;master&#39; to our remote on GitHub named &#39;origin&#39;.</p>
 <p><code>$ git push origin master</code></p>
-<p>Now go to GitHub and refresh the page of your repository. Everything is the same locally and remotely. Congrats on your first public repository! You will use this repository to contain the rest of your lab work.</p>
+<p>Now go to GitHub and refresh the page of your repository. Everything is the same locally and remotely. You should see the following in your local repo:</p>
+<p><img src="./img/git_repo_init.png" alt="Empty Local Repo"></p>
+<p>Congrats on your first public repository! You will use this repository to contain the rest of your lab work.</p>
 
       </div>
      
       <div  class="ui tab segment lab" data-tab="03">
-        <h1>Node.js</h1>
-<p>You should have node on your machine already. Check by entering the following in a terminal window: <code>$ node -v</code>. If it does not recognise the command you probably need to install node.  </p>
-<p>If you do not have Node.js installed in you machine, please go to <a href="http://nodejs.org/">nodejs.org</a> and download/install node for your platform. To check if node is working, open a command line/terminal window on your machine and enter <code>node -v</code>. IT should respond as follows:</p>
-<pre><code>&gt; node -v
-v4.x.x</code></pre>
-<p>The work for this lab has been tested with node version 0.13.0 but should be ok with later versions.</p>
-<h2>The &quot;Hello World&quot; HTTP Server</h2>
-<p>We will be using node as a web application platform. In this step we&#39;ll set up a simple HTTP server that responds to every request with the plain text message &quot;Hello World&quot;. Create a new folder called <em>node-lab-1</em> in the <em>ewd-labs</em> folder. Create a new file called &quot;app1.js&quot; in the <em>node-lab-1</em> folder  with the following contents:</p>
-<pre><code class="lang-javascript">// Load the http module to create an http server.
-var http = require(&#39;http&#39;);
-
-// Configure our HTTP server to respond with Hello World to all requests.
-var server = http.createServer(function (request, response) {
-  response.writeHead(200, {&quot;Content-Type&quot;: &quot;text/plain&quot;});
-  response.end(&quot;Hello World\n&quot;);
-});
-
-// Listen on port 8000, IP defaults to 127.0.0.1
-server.listen(8000);
-
-// Put a friendly message on the terminal
-console.log(&quot;Server running at http://127.0.0.1:8000/&quot;);</code></pre>
-<p>In the first line, we include the http core module and assign it to a variable called <code>http</code>. Next we assign a variable called <code>server</code> from the <code>http.createServer(...)</code> function. The argument passed into this call is the function that is called whenever an http request comes in.
-Finally we call <code>server.listen(8000)</code> to tell node.js the port on which we want our server to run. 
-To run the server open a terminal/command window in the lab6 folder and enter:</p>
-<pre><code>node app1.js</code></pre>
-<p>Now open your browser to &#39;<a href="http://localhost:8000">http://localhost:8000</a>&#39;. You should see the following:</p>
+        <h1>Set Up and Configuration</h1>
+<p>We will now set up and configure our development environment for Node.js.</p>
+<h4>package.json</h4>
+<p>If you&#39;re developing a Node program or library for deployment, it&#39;s a good practice to include a package.json file. This file is a manifest of the Node project and is located at your project root. It contains various information specific to your project.</p>
+<ul>
+<li>Create a new folder called <em>node_lab1</em> in your new repo.</li>
+<li>Open a terminal window in <em>node_lab1</em> and enter the following command:</li>
+</ul>
 <blockquote>
-<p>![Node Hello World](Screenshot from 2015-03-02 16:42:09.png)</p>
+<pre><code class="lang-javascript">npm init</code></pre>
 </blockquote>
-<p>The connection function is invoked with a <strong>req</strong> and <strong>res</strong> object. The <strong>req</strong> object represents the HTTP request and is a readable stream that emits &#39;data&#39; events for each incoming piece of data (like a form submission or file upload). The <strong><em>res</em></strong> object represents the HTTP response and is used to send data back to the client. In our case we are simply sending a 200 OK header, as well as the body &#39;Hello World&#39;.</p>
-<h3>Nodes Module system</h3>
-<p>Node.js provides a simple module system that lets you structure your program into different files. In our <em>app1.js</em> example, we use the core http module to create our HTTP service. You can also write your own modules. When creating a module, this can be interpreted as moving all related functions into a file. For example, update your <em>app1.js</em> file as follows:</p>
-<pre><code class="lang-javascript">// Load the http module to create an http server.
-var http = require(&#39;http&#39;);
-// Load the greeting module to provide the greeting.
-var greeting = require(&#39;./greeting&#39;);
-
-// Configure our HTTP server to respond with Hello World to all requests.
-var server = http.createServer(function (request, response) {
-  response.writeHead(200, {&quot;Content-Type&quot;: &quot;text/plain&quot;});
-  response.end(greeting.english());
-});
-
-// Listen on port 8000, IP defaults to 127.0.0.1
-server.listen(8000);
-
-// Put a friendly message on the terminal
-console.log(&quot;Server running at http://127.0.0.1:8001/&quot;);</code></pre>
-<p>Now create a new file called &#39;greeting.js&#39; in the same folder with the following content:</p>
-<pre><code class="lang-javascript">//Greeting in English
-exports.english = function(){
-    return &quot;Hello World!&quot;;
-}
-//Greeting in French
-exports.french = function(){
-    return &quot;Bonjour tout le Monde!&quot;;
+<p>You will be prompted for details.</p>
+<ul>
+<li>Enter the following:</li>
+</ul>
+<blockquote>
+<pre><code class="lang-json">name: (node_lab1)
+version: (1.0.0) 0.0.1
+description: node lab 1
+entry point: (index.js)
+test command:
+git repository: https://your_git_domain/ewd_labs_2017.git
+keywords:
+author: fxwalsh
+license: (ISC)</code></pre>
+</blockquote>
+<p>You should now see a <code>package.json</code> file in the lab folder with these details.</p>
+<h4>Babel</h4>
+<p>We will be writing our Javascript using ES2015 so we require transcoding before our Node app runs. We need to bring in some babel packages to handle this.</p>
+<ul>
+<li>Enter the following command to get the relevant babel package and relevant  presets.</li>
+</ul>
+<blockquote>
+<pre><code class="lang-script">npm install --save-dev babel-cli
+npm install --save-dev babel-preset-es2015 babel-preset-stage-2</code></pre>
+</blockquote>
+<p>The --save-dev will write this dependency to the development section of the package.json.</p>
+<ul>
+<li>To configure babel to transcode from es2015, create a file called <strong>.babelrc</strong> in the <strong>node_lab1</strong> folder and enter in the following:</li>
+</ul>
+<blockquote>
+<pre><code class="lang-json">{
+  &quot;presets&quot;: [&quot;es2015&quot;]
 }</code></pre>
-<p>Now test your file again using a browser. The <code>exports</code> expose the functions to other modules that require them. To access the exported functions in out simple server, we can load the greeting module using the require function in <code>var greeting = require(&#39;./greeting&#39;);</code>. </p>
-<p>As you will see, the core modules give you very few modules. Most of the real power in Node.js is contained in the third party modules available through the Node Package Management system(NPM).</p>
-<h3>Commit your changes</h3>
-<p>Commit the changes you have just made using git.</p>
+</blockquote>
+<h4>Express</h4>
+<p>To create a node web server, we&#39;re going to use Express.js so we need to install this as a normal dependancy.</p>
+<ul>
+<li>Install the express package.</li>
+</ul>
+<blockquote>
+<pre><code>npm install --save express</code></pre>
+</blockquote>
+<p>The --save will write this dependency to package.json.</p>
+<h4>Nodemon</h4>
+<p>When we change things in a Node.js project, a restart is required for the changes to be reflected in the running process. This can be very time consuming. Instead of manually restarting Node, we will install the <code>nodemon</code> package, which can monitor our files and auto-restart Node for us when we save changes to disk.</p>
+<ul>
+<li>Install Nodemon:</li>
+</ul>
+<blockquote>
+<pre><code class="lang-script">npm install --save-dev nodemon</code></pre>
+</blockquote>
+<p>We want to specify a script we want to run for the Node server, which will be the server.js file. So our start script would be <code>node server.js</code>. However, since we want the code to work with babel and nodemon, we want to add a nodemon execution wrapper and use babel-node instead of node.</p>
+<ul>
+<li>Modify the package.json file and replace the <em>scripts</em> property with the following:</li>
+</ul>
+<blockquote>
+<pre><code class="lang-json">....
+&quot;scripts&quot;: {
+    &quot;start&quot;: &quot;nodemon --exec babel-node server.js&quot;
+  },
+....</code></pre>
+</blockquote>
+<h4>Linting</h4>
+<p>Finally, it&#39;d be good to get feedback on the quality of your code as you write it. ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code. It kind of tells you if your code looks lousy! Install as follows.</p>
+<blockquote>
+<pre><code class="lang-javascript">npm install eslint babel-eslint</code></pre>
+</blockquote>
+<ul>
+<li>To configure ESLint, enter the following at the command line:</li>
+</ul>
+<blockquote>
+<pre><code class="lang-shell">eslint --init</code></pre>
+</blockquote>
+<ul>
+<li>Answer the resulting questions as follows:</li>
+</ul>
+<blockquote>
+<p>How would you like to configure ESLint? Use a popular style guide</p>
+<p>Which style guide do you want to follow? Google</p>
+<p>What format do you want your config file to be in? JSON</p>
+</blockquote>
+<h4>App Config</h4>
+<p>Your application will need some typical configuration details, for example the port and host info.</p>
+<ul>
+<li>Create a new file in your application root folder called <strong>config.js</strong> and add the following content:</li>
+</ul>
+<pre><code class="lang-javascript">
+const env = process.env;
+
+export const nodeEnv = env.NODE_ENV || &#39;development&#39;;
+
+export const logStars = function(message) {
+  console.info(&#39;**********&#39;);
+  console.info(message);
+  console.info(&#39;**********&#39;);
+};
+
+export default {
+  port: env.PORT || 8080,
+  host: env.HOST || &#39;localhost&#39;,
+  get serverUrl(){
+    return &#39;http://${this.host}:${this.port}&#39;;
+  }
+};</code></pre>
+<p>This configuration will be used in your server-side APIs.</p>
+<h4>Commit it</h4>
+<p>Now that we have a our basic setup and configuration complete, this is a good time to commit your changes to git.</p>
+<ul>
+<li>As in previous labs, change directory to the ewd_labs_2017 folder and do the following:</li>
+</ul>
+<blockquote>
+<pre><code class="lang-shell">git add -A
+git commit -m &quot;set up and configuration&quot;</code></pre>
+</blockquote>
+<p>You should see an output indicating only one file was updated. This is because we are ignoring node_modules. We do not need to track changes here as it&#39;s contents are specified in the package.json.</p>
 
       </div>
      
       <div  class="ui tab segment lab" data-tab="04">
-        <h1>Node Package Manager</h1>
-<p>Node Package Manager(NPM), is the program you use to install third party Node modules. It comes with more recent versions of Node so no need to install it. </p>
-<h3>package.json</h3>
-<p>If you&#39;re developing a Node program or library for deployment, it&#39;s a good practice to include a package.json file. This file is a manifest of the Node project and is located at your project root. It contains various information specific to your project. To create a package.json file, run the following in the <em>node-lab-1</em> folder:</p>
-<pre><code>npm init</code></pre>
-<p>You&#39;ll now be asked a few questions about your node app. Answer as follows:
-- name: (node-lab-1) 
-- version: (1.0.0) ;
-- description: simple http server;
-- entry point: app1.js;
-- keywords: http node
-- author: <em>your name</em>
-- license: (ISC) </p>
-<p>You can leave the others blank.</p>
-<h3>Installing Modules</h3>
-<h4>Local Modules</h4>
-<p>The most common usage of npm is to install packages that have been published to the npm registry. An example is the <a href="https://www.npmjs.com/package/express">express</a> package. To install request, open a terminal/command prompt in the node-lab-1 folder. Enter the following command:</p>
-<pre><code>npm install express --save</code></pre>
-<p>This will install the package to the <code>node_modules</code> folder in the project folder. All locally installed modules will be installed here. 
-To use the package, add another &quot;require&quot; to the server code:</p>
-<pre><code>require(&#39;express&#39;)</code></pre>
-<p>We will be using the Express package later on to help us create web apis.</p>
-<h3>Add .gitignore file</h3>
-<p>It&#39;s probably best to let NPM, and the <em>package.json</em> file, manage the project dependencies contained in node_modules folder. Create a new  file using a text editor and enter the following text:</p>
-<pre><code>node_modules </code></pre>
-<p>Save the file as <code>.gitignore</code> in your <em>node-lab-1</em> folder.</p>
-<h3>Commit changes</h3>
-<p>Do a <code>git status</code>. Notice the modules contained in the <code>node_modules</code> folder are not listed. Git will ignore them from now on. Now add and commit your changes as usual.</p>
-<hr>
+        <h1>The &quot;Hello World&quot; HTTP Server</h1>
+<p>We will be using node as a web application platform. In this step we&#39;ll set up a simple HTTP server that responds to every request with the plain text message &quot;Hello World&quot;. Update <em>server.js</em>  with the following contents:</p>
+<pre><code class="lang-javascript">// Load the http module to create an http server.
+import http from &#39;http&#39;;
+import config from &#39;./config&#39;;
+
+// Configure our HTTP server to respond with Hello World to all requests.
+var server = http.createServer((req, res) =&gt; {
+  res.writeHead(200, {&#39;Content-Type&#39;: &#39;text/plain&#39;});
+  res.end(&#39;Hello World!&#39;);
+});
+
+server.listen(config.port);
+
+// Put a friendly message on the terminal
+console.log(&quot;Server running at &quot; + config.port);</code></pre>
+<p>In the first line, we import the http core module and assign it to <code>http</code>. Next we assign the variable  <code>server</code> from the <code>http.createServer(...)</code> function. The argument passed into this call is the function that is called whenever an http request comes in.
+Finally we call <code>server.listen(config.port)</code> to tell node.js the port on which we want our server to run.
+To run the server open a terminal/command window in the node-lab1 folder and enter:</p>
+<pre><code>npm start</code></pre>
+<p>Now open your browser to &#39;<a href="http://localhost:8080">http://localhost:8080</a>&#39;. You should see the following:</p>
+<blockquote>
+<p><img src="./img/hello_world.png" alt="Node Hello World"></p>
+</blockquote>
+<p>The connection function is invoked with a <strong>req</strong> and <strong>res</strong> object. The <strong>req</strong> object represents the HTTP request and is a readable stream that emits &#39;data&#39; events for each incoming piece of data (like a form submission or file upload). The <strong><em>res</em></strong> object represents the HTTP response and is used to send data back to the client. In our case we are simply sending a 200 OK header, as well as the body &#39;Hello World&#39;.</p>
+<h3>Node&#39;s Module system</h3>
+<p>Node.js provides a simple module system that lets you structure your program into different files. In our <em>server.js</em> example, we use the core http module to create our HTTP service. You can also write your own modules. When creating a module, this can be interpreted as moving all related functions into a file. For example, update your <em>server.js</em> file as follows:</p>
+<pre><code class="lang-javascript">// Load the http module to create an http server.
+import http from &#39;http&#39;;
+import config from &#39;./config&#39;;
+import greeting  from &#39;./greeting&#39;
+
+// Configure our HTTP server to respond with Hello World to all requests.
+var server = http.createServer((req, res) =&gt; {
+  const language = req.headers[&#39;accept-language&#39;];
+  const resp_language = greeting[language]?language:&#39;en&#39;;
+  res.writeHead(200, {&#39;Content-Type&#39;: &#39;text/plain&#39; , &#39;Content-Language&#39;: resp_language});
+  res.end(greeting[resp_language]);
+});
+
+server.listen(config.port);
+
+console.log(&quot;Server running at &quot; + config.port);</code></pre>
+<p>Now create a new file called &#39;greeting.js&#39; in the same folder with the following content:</p>
+<pre><code class="lang-javascript">const greeting = {
+    en: &quot;Hello World!&quot;,
+    fr: &quot;Bonjour!&quot;
+}
+
+export default greeting;</code></pre>
+<p>Now test your file again using a browser. The <code>export</code> expose greeting to other modules that require them. To access the exported functions in our simple server, we can load the greeting module using the require function in <code>import greeting from (&#39;./greeting&#39;);</code>. The server gets the accepted language from the requesting process using <code>req.headers[&quot;accept-language&quot;]</code> . To set the accept-language HTTP header of the request:</p>
+<ul>
+<li>install a suitable REST client. This lab will opt for <a href="https://www.getpostman.com/">Postman</a>.</li>
+<li>Perform a <strong>HTTP GET</strong> request to <strong>localhost:8080</strong> with <code>Accept-language=fr</code>.</li>
+</ul>
+<p>You should see the french representation for the greeting returned in the response.</p>
+<blockquote>
+<p><img src="./img/greeting_in_french.png" alt="Greeting in French"></p>
+</blockquote>
+<p>As you will see, the core modules give you very few modules. Most of the real power in Node.js is contained in the third party modules available through the Node Package Management system(NPM).</p>
+<h3>Commit your changes</h3>
+<p>Commit the changes you have just made using git.</p>
+<pre><code class="lang-script">git add -A
+git commit -m &quot;node-lab1,  simple server&quot;</code></pre>
 
       </div>
      
       <div  class="ui tab segment lab" data-tab="05">
         <h1>Express Applications</h1>
-<p>We&#39;ll now add some static content to our web server. Up to now you&#39;ve used http-server which is fine for prototyping HTML. We&#39;ll now move to Express, the package we installed in the last section. Express is a richer web app package and provides a nice high level approach to serving up static content. It&#39;s based around the idea of creating an Express &quot;app&quot; that you can easily configure. One of the configuration options allows you to specify the location of your publicly available content such as static HTML, CSS, client-side Javascript files etc.</p>
+<p>We&#39;ll now add some static content to our web server. Up to now you&#39;ve used <strong>http-server</strong> which is fine for prototyping HTML. We&#39;ll now move to Express, the package we installed in the last section. Express is a richer web app package and provides a nice high level approach to serving up static content. It&#39;s based around the idea of creating an Express &quot;app&quot; that you can easily configure. One of the configuration options allows you to specify the location of your publicly available content such as static HTML, CSS, client-side Javascript files etc.</p>
 <ul>
-<li>In your <em>node-lab-1</em> folder, create the following folder structure:<pre><code>+public 
+<li>In your <em>node-lab-1</em> folder, create the following folder structure:<pre><code>+public
   |-javascript
   |-stylesheets</code></pre>
 </li>
-<li>Add the html from your last lab to the public folder. Alternatively, you can add the solution to <em>lab2</em> from <a href="https://drive.google.com/file/d/0BxtnCYpIWp3Da215RGhIT0JyYjQ/view?usp=sharing">here</a>. Make sure the files are in the public folder.</li>
-<li>In node-lab-1, create a new file called <em>app2.js</em>  that contains the following javascript:</li>
+<li>Add the solution to <em>lab2</em> from <a href="https://drive.google.com/file/d/0BxtnCYpIWp3Da215RGhIT0JyYjQ/view?usp=sharing">here</a>. Make sure the files are in the public folder.</li>
+<li>In node-lab-1, replace the contents of <strong>server.js</strong> with the following javascript:</li>
 </ul>
-<pre><code class="lang-javascript">var express = require(&#39;express&#39;);
-//create an express app
-var app = express();
+<pre><code class="lang-javascript">
+import config from &#39;./config&#39;;
+import express from &#39;express&#39;;
 
-// Configure the app to serve up content from public directory
-app.use(express.static(__dirname + &#39;/public&#39;));
+const server = express();
 
-// Listen on port 8000, IP defaults to 127.0.0.1
-app.listen(8000)
+server.use(express.static(&#39;public&#39;));
 
-// Put a friendly message on the terminal
-console.log(&quot;Server running at http://127.0.0.1:8000/&quot;);</code></pre>
+server.listen(config.port, () =&gt; {
+  console.info(&#39;Express listening on port&#39;, config.port);
+});</code></pre>
 <ul>
-<li>Run the express server by entering <code>node app2.js</code> at the terminal/command line as before. Now test the application as before in a browser. It should work exactly as before. </li>
+<li>Now test the application as before in a browser. It should display the default resource (index.html) from the public folder.</li>
 </ul>
 <h4>Simple Routing</h4>
 <p>Express gives us an easy way of mapping specific URL paths to Javascript functions. You will now replicate the functionality from the &quot;Hello World&quot; section so that a HTTP GET request for the URL path  &#39;/greeting/&#39; will respond with &quot;Hello World&quot;. Modify the server.js by adding an <code>app.get([route],[callback function])</code>.
 - Modify the server.js script to include a route for /greeting that responds with &quot;hello world&quot;.</p>
-<pre><code class="lang-javascript">var express = require(&#39;express&#39;);
+<pre><code class="lang-javascript">import express from &#39;express&#39;;
 //Add greeting module
-var greeting = require(&#39;./greeting&#39;);
+import greeting from &#39;./greeting&#39;;
 //create an express app
-var app = express();
+const app = express();
 
 // Configure the app to serve up content from public directory
-app.use(express.static(__dirname + &#39;/public&#39;));
+app.use(express.static(&#39;public&#39;));
 
-//add route for /greeting 
-app.get(&#39;/greeting&#39;,function (request, response) {
-  response.writeHead(200, {&quot;Content-Type&quot;: &quot;text/plain&quot;});
-  response.end(greeting.english());
+//add route for /greeting
+app.get(&#39;/greeting&#39;,(req, res)=&gt;{
+  var language = req.headers[&quot;accept-language&quot;];
+  res.writeHead(200, {&quot;Content-Type&quot;: &quot;text/plain&quot;});
+  res.end(greeting[language] || greeting[&#39;en&#39;]);
 });
 
-// Listen on port 8000, IP defaults to 127.0.0.1
-app.listen(8000)
+app.listen(config.port)
 
 // Put a friendly message on the terminal
-console.log(&quot;Server running at http://127.0.0.1:8000/&quot;);</code></pre>
+console.log(&quot;Server running on port &quot; +config.port);</code></pre>
 <h3>Commit and Push to Github</h3>
-<p>Commit your changes using git as before.
-Now push your changes to your remote repository.</p>
-<p><code>git push origin master</code></p>
+<p>Commit your changes using git as before and push your changes to your remote repository.</p>
+<pre><code class="lang-script">git add -A
+git commit -m &quot;Changed to express app&quot;
+git push origin master</code></pre>
+<h3>Contacts API</h3>
+<p>We wish to replace the API used in last weeks lap with an Express API. Ultimately this will allow us to connect to a Mongo database and allow for a more realistic API that can cope with large volumes of data you would expect in a production environment.</p>
+<p>Create a new folder called <strong>api</strong> in <strong>node-lab-1</strong>. Create another folder called <strong>contacts</strong> in <strong>api</strong>. Your folder structure should look as follows:</p>
+<pre><code>+node-lab-1
+    |-api
+       |-contacts</code></pre>
+<p>As before we will use test data for the time being. Create a new file called <strong>contacts.js</strong> in the contacts folder and add the following code:</p>
+<pre><code class="lang-javascript">var contacts = [
+  {
+    &quot;name&quot;: &quot;Contact 1&quot;,
+    &quot;address&quot;: &quot;123 Test St&quot;,
+    &quot;phone_number&quot;: &quot;132-3212&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Contact 2&quot;,
+    &quot;address&quot;: &quot;23 Main St&quot;,
+    &quot;phone_number&quot;: &quot;934-4329&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Contact 3&quot;,
+    &quot;address&quot;: &quot;4 Lower St&quot;,
+    &quot;phone_number&quot;: &quot;432-5832&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Contact 4&quot;,
+    &quot;address&quot;: &quot;49 Upper Street&quot;,
+    &quot;phone_number&quot;: &quot;934-4290&quot;
+  }
+];
+
+export default contacts;</code></pre>
+<ul>
+<li>Also in the contacts folder, create a new file called <strong>index.js</strong> and enter the folowing javascript:</li>
+</ul>
+<pre><code class="lang-javascript">import express from &#39;express&#39;;
+import contacts from &#39;./contacts&#39;;
+
+const router = express.Router();
+
+router.get(&#39;/&#39;, (req, res) =&gt; {
+  res.send({ contacts: contacts });
+});
+
+export default router;</code></pre>
+<ul>
+<li>Now update <strong>server.js</strong> to use the new contacts routing script by replacing the contents with the following code</li>
+</ul>
+<pre><code class="lang-javascript">import config from &#39;./config&#39;;
+import express from &#39;express&#39;;
+import contactsRouter from &#39;./api/contacts&#39;;
+
+const server = express();
+
+server.use(&#39;/api/contacts&#39;, contactsRouter);
+server.use(express.static(&#39;public&#39;));
+
+server.listen(config.port, config.host, () =&gt; {
+  console.info(&#39;Express listening on port&#39;, config.port);
+});</code></pre>
+<p>Now test the application again by doing a HTTP GET on localhost/api/contacts. You should see something simlilar toe the following:</p>
+<p><img src="./img/contacts_api_1.png" alt="Get contact details"></p>
+<h3>Challange</h3>
+<p>Try to include in  server-side route for the Hacker News lab you did last week. Follow the same procedure as above.</p>
+<blockquote>
+<p>hint: create a new folder in api for Hacker News. Create a routing script and update server.js to add the Hacker News route.</p>
+</blockquote>
 
       </div>
      
