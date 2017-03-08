@@ -265,6 +265,12 @@ Click create repository!</p>
 <p>Now go to GitHub and refresh the page of your repository. Everything is the same locally and remotely. You should see the following in your local repo:</p>
 <p><img src="./img/git_repo_init.png" alt="Empty Local Repo"></p>
 <p>Congrats on your first public repository! You will use this repository to contain the rest of your lab work.</p>
+<h3>Clone the samples repo</h3>
+<p>Some of the example code used in the lectures can be found in this repo:</p>
+<p><a href="https://github.com/fxwalsh/enterprise-web-2017.git">https://github.com/fxwalsh/enterprise-web-2017.git</a></p>
+<p>Open a command window in a suitable location on your machine and  clone the repo :</p>
+<pre><code class="lang-script">git clone https://github.com/fxwalsh/enterprise-web-2017.git</code></pre>
+<p>Make sure to read the readme.md file to run the samples. They may be useful to complete the lab.</p>
 
       </div>
      
@@ -400,6 +406,10 @@ git commit -m &quot;set up and configuration&quot;</code></pre>
      
       <div  class="ui tab segment lab" data-tab="04">
         <h1>The &quot;Hello World&quot; HTTP Server</h1>
+<p>Some of the example code used in the lectures can be found in this repo:</p>
+<p><a href="https://github.com/fxwalsh/enterprise-web-2017.git">https://github.com/fxwalsh/enterprise-web-2017.git</a></p>
+<p>Please clone the repo on your local machine in a suitable location:</p>
+<pre><code class="lang-script">git clone https://github.com/fxwalsh/enterprise-web-2017.git</code></pre>
 <p>We will be using node as a web application platform. In this step we&#39;ll set up a simple HTTP server that responds to every request with the plain text message &quot;Hello World&quot;. Update <em>server.js</em>  with the following contents:</p>
 <pre><code class="lang-javascript">// Load the http module to create an http server.
 import http from &#39;http&#39;;
@@ -505,9 +515,10 @@ app.use(express.static(&#39;public&#39;));
 
 //add route for /greeting
 app.get(&#39;/greeting&#39;,(req, res)=&gt;{
-  var language = req.headers[&quot;accept-language&quot;];
+  const language = req.headers[&quot;accept-language&quot;];
+  const resp_language = greeting[language]?language:&#39;en&#39;;
   res.writeHead(200, {&quot;Content-Type&quot;: &quot;text/plain&quot;});
-  res.end(greeting[language] || greeting[&#39;en&#39;]);
+  res.end(greeting[resp_language]);
 });
 
 app.listen(config.port)
