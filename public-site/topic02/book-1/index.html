@@ -158,6 +158,12 @@ body
         </a>
       
     
+      
+        <a class="item" href="../../topic03/book-1/index.html">
+          node_lab2
+        </a>
+      
+    
   </div>
   <div class="pusher" tabindex="-1">
     <div class="ui basic segment">
@@ -192,8 +198,8 @@ body
 <h2>Clone a Repository</h2>
 <h3>Clone the samples repository</h3>
 <p>Select a location on your machine where you would like to keep the code examples taken from the weekly talks. Open a terminal window in that location and clone the samples repository:</p>
-<pre><code>git clone https://github.com/fxwalsh/ewd_samples_2017.git</code></pre>
-<p>This should create a new folder called <em>ewd_samples_2017</em>. Open the folder and you should see the node samples from the lecture slides. We will use this repository to update our sample code as the module progresses. You will need to <em>pull</em> the repository each week to get the latest samples.</p>
+<pre><code>git clone https://github.com/fxwalsh/enterprise-web-2017.git</code></pre>
+<p>This should create a new folder called <em>enterprise-web-2017</em>. Open the folder and you should see the node samples from the lecture slides. We will use this repository to update our sample code as the module progresses. You will need to <em>pull</em> the repository each week to get the latest samples.</p>
 <h2>Create a repository</h2>
 <p>A repository is essentially a project. You can imagine it as a project&#39;s folder with all the related files inside of it.
 <img src="./img/repos.png" alt="git repos">
@@ -406,10 +412,6 @@ git commit -m &quot;set up and configuration&quot;</code></pre>
      
       <div  class="ui tab segment lab" data-tab="04">
         <h1>The &quot;Hello World&quot; HTTP Server</h1>
-<p>Some of the example code used in the lectures can be found in this repo:</p>
-<p><a href="https://github.com/fxwalsh/enterprise-web-2017.git">https://github.com/fxwalsh/enterprise-web-2017.git</a></p>
-<p>Please clone the repo on your local machine in a suitable location:</p>
-<pre><code class="lang-script">git clone https://github.com/fxwalsh/enterprise-web-2017.git</code></pre>
 <p>We will be using node as a web application platform. In this step we&#39;ll set up a simple HTTP server that responds to every request with the plain text message &quot;Hello World&quot;. Update <em>server.js</em>  with the following contents:</p>
 <pre><code class="lang-javascript">// Load the http module to create an http server.
 import http from &#39;http&#39;;
