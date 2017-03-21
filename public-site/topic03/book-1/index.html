@@ -156,6 +156,12 @@ body
         </a>
       
     
+      
+        <a class="item" href="../../topic04/book1/index.html">
+          node-lab3
+        </a>
+      
+    
   </div>
   <div class="pusher" tabindex="-1">
     <div class="ui basic segment">
@@ -581,17 +587,14 @@ export const add = (newTitle, newLink) =&gt; {
 <li>Now replace the <code>render</code> function of the HackerApp component with the following code. This replaces the previous use of stubAPI with the new posts state retrieved from the api package.</li>
 </ul>
 <pre><code class="lang-javascript">render: function(){
-
+    const posts = _.sortBy(this.state.posts, post =&gt;
+          post.upvotes);
     return (
       &lt;div &gt;
-       &lt;NewsList posts={_.sortBy(this.state.posts, post =&gt;
-             post.upvotes
-
-      )}
+       &lt;NewsList posts={posts}
             upvoteHandler={this.incrementUpvote} /&gt;
        &lt;Form addHandler={this.addPost} /&gt;
      &lt;/div&gt;
-
     );
 }</code></pre>
 <p>Now have a look at the app in the browser. You should see the list of news items as before. This time, however, they are retrieved from the Express API.
@@ -601,10 +604,12 @@ Try to add a new post. You&#39;ll notice nothing happens. Next we will update th
 <li>Locate the <code>addPost()</code> function in the HackerApp component. Replace it with the following:</li>
 </ul>
 <pre><code class="lang-javascript">addPost : function(title,link) {
-          api.add(title,link).then(resp =&gt; {
-          this.state.posts.push({&quot;id&quot;:resp.id,&quot;title&quot;:title,&quot;link&quot;:link,&quot;upvotes&quot;:0};
-          this.setState({})});
-      }</code></pre>
+  api.add(title,link)
+  .then(resp =&gt; {
+                const newPost = {&quot;id&quot;:resp.id,&quot;title&quot;:title,&quot;link&quot;:link,&quot;upvotes&quot;:0, &quot;comments&quot;:[]};
+                this.setState({posts: this.state.posts.concat([newPost])});
+  })
+}</code></pre>
 <p>This function calls the Express API which returns a promise. When the promise is fulfilled, then it pushes the new post onto the posts state property. The HackerApp should react to this state and call the render function again.</p>
 <p>Check the app in the browser again. You should be able add posts to the list.</p>
 <h3>Upvoting a Post</h3>
