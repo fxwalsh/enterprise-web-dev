@@ -8,6 +8,8 @@ export const logStars = message => {
   console.info('**********');
 };
 
+
+
 export default {
   mongoDb: 'mongodb://localhost:27017/test',
   seedDb: true,
